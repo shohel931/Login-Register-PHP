@@ -7,16 +7,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
-
-
-        if ($password === $cpassword) {
-        echo "Password & Confirm Password mismatched!";
+    // Check if passwords match
+    if ($password !== $cpassword) {
+        echo "Passwords do not match.";
     } else {
-        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+        // Check if username already exists
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        $stmt = $conn->prepare("INSERT INTO users (username, email, number, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $username, $email, $number, $hashed_pass);
+        if ($result->num_rows > 0) {
+            echo "Username already exists. Please choose another.";
+        } else {
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+            // Insert new user into the database
+            $stmt = $conn->prepare("INSERT INTO users (username, email, number, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $username, $email, $number, $hashed_password);
+
+            if ($stmt->execute()) {
+                echo "Registration successful!";
+                header("Location: login.php");
+                exit();
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+        }
     }
 }
 
