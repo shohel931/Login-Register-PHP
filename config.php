@@ -1,10 +1,10 @@
 <?php  
 $host = 'localhost';
-$db = 'my_users';
+$db = 'test-work';
 $users = 'root';
 $pass = '';
 $conn = new mysqli($host, $users, $pass, $db);
-if ($conn->connect error) {
+if ($conn->connect_error) {
     die("Connection failed:" . $conn->contact_error);
 } 
 
