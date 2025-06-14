@@ -98,7 +98,10 @@ body{
 .main_dashboard .sub_dashboard_a ul li a:hover{
     text-decoration: underline;
 }
-
+.main_dashboard .sub_dashboard_a .title_dashboard h2{
+    font-size: 25px;
+    margin-bottom: 50px;
+}
 
 
 

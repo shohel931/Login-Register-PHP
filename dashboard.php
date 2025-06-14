@@ -23,9 +23,6 @@
         <div class="title_dashboard">
             <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
         </div>
-      <div class="user">
-        <h2><i class="fas fa-user"></i> Username</h2>
-      </div>
       <ul>
         <li><a href="#"><span><i class="fas fa-home"></i></span> Home</a></li>
         <li><a href="#"><span><i class="fas fa-user"></i></span> Profile</a></li>
