@@ -24,10 +24,10 @@
             <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
         </div>
       <ul>
-        <li><a href="#"><span><i class="fas fa-home"></i></span> Home</a></li>
-        <li><a href="#"><span><i class="fas fa-user"></i></span> Profile</a></li>
-        <li><a href="#"><span><i class="fas fa-cog"></i></span> Settings</a></li>
-        <li><a href="#"><span><i class="fas fa-sign-out-alt"></i></span> Logout</a></li>
+        <li><a href="dashboard.php"><span><i class="fas fa-home"></i></span> Home</a></li>
+        <li><a href="profile.php"><span><i class="fas fa-user"></i></span> Profile</a></li>
+        <li><a href="settings.php"><span><i class="fas fa-cog"></i></span> Settings</a></li>
+        <li><a href="logout.php"><span><i class="fas fa-sign-out-alt"></i></span> Logout</a></li>
       </ul>
     </div>
   </div>
