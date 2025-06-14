@@ -37,7 +37,7 @@
     <div class="dashboard_header">
       <h1>Dashboard</h1>
       <div class="user_info">
-        <span> Welcome, User!</span>
+        <span> Welcome, <i class="fa-solid fa-circle-user"></i>User!</span>
       </div>
     </div>
     <div class="dashboard_content">
