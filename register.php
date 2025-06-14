@@ -16,7 +16,7 @@
 <body>
     
 
-<div class="register_form">
+<div class="register_login_form">
     <h2>Register</h2>
     <form  method="POST">
        <div class="user">
