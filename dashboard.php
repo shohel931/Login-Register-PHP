@@ -18,7 +18,44 @@
 
 
 <div class="main_dashboard">
-  
+  <div class="sub_dashboard_a">
+    <div class="sidebar">
+      <div class="user">
+        <h2><i class="fas fa-user"></i> Username</h2>
+      </div>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="sub_dashboard_b">
+    <div class="dashboard_header">
+      <h1>Dashboard</h1>
+      <div class="user_info">
+        <img src="https://via.placeholder.com/50" alt="User Avatar">
+        <span>Welcome, User!</span>
+      </div>
+    </div>
+    <div class="dashboard_content">
+      <div class="card">
+        <h2>Card Title 1</h2>
+        <p>Some content for the first card.</p>
+      </div>
+      <div class="card">
+        <h2>Card Title 2</h2>
+        <p>Some content for the second card.</p>
+      </div>
+      <div class="card">
+        <h2>Card Title 3</h2>
+        <p>Some content for the third card.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
