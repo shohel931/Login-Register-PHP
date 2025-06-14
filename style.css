@@ -96,7 +96,7 @@ body{
     font-size: 18px;
 }
 .main_dashboard .sub_dashboard_a ul li a:hover{
-    text-decoration: underline;
+    color: #ddd;
 }
 .main_dashboard .sub_dashboard_a .title_dashboard h2{
     font-size: 25px;
@@ -112,7 +112,16 @@ body{
 
 .sub_dashboard_b{
     width: 85%;
-    padding: 20px;
     box-sizing: border-box;
     background-color: #f4f4f4;
+}
+.sub_dashboard_b .dashboard_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    position: sticky;
 }
