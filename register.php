@@ -17,6 +17,7 @@
     
 
 <div class="register_form">
+    <h2>Register</h2>
     <form  method="POST">
        <div class="user">
             <i class="fa-solid fa-user"></i>
