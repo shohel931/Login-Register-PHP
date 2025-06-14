@@ -77,11 +77,36 @@ body{
 .main_dashboard .sub_dashboard_a{
     width: 15%;
     background-color: #445BF4;
-    padding: 10px 30px;
+    padding: 10px 60px;
     color: white;
     height: 100vh;
     box-sizing: border-box;
 }
+.main_dashboard .sub_dashboard_a ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main_dashboard .sub_dashboard_a ul li{
+    margin: 20px 0;
+}
+.main_dashboard .sub_dashboard_a ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.main_dashboard .sub_dashboard_a ul li a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
 .sub_dashboard_b{
     width: 85%;
     padding: 20px;

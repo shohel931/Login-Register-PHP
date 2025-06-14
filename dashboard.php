@@ -20,6 +20,9 @@
 <div class="main_dashboard">
   <div class="sub_dashboard_a">
     <div class="sidebar">
+        <div class="title_dashboard">
+            <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+        </div>
       <div class="user">
         <h2><i class="fas fa-user"></i> Username</h2>
       </div>
