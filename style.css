@@ -77,6 +77,14 @@ body{
 .main_dashboard .sub_dashboard_a{
     width: 15%;
     background-color: #445BF4;
-    padding: 20px;
+    padding: 10px 30px;
     color: white;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.sub_dashboard_b{
+    width: 85%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
