@@ -17,14 +17,26 @@ body{
     color: #333;
     font-size: 30px;
     font-family: "PT Serif";
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 .register_form input[type="text"],
 .register_form input[type="email"],
+.register_form input[type="tel"],
 .register_form input[type="password"]{
     width: 75%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+}
+.register_form i {
+    font-size: 20px;
+    margin: 0 10px;
 }

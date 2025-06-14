@@ -27,6 +27,10 @@
             <i class="fa-solid fa-envelope"></i>
             <input type="email" name="email" placeholder="Email" required>
         </div>
+        <div class="number">
+            <i class="fa-solid fa-phone"></i>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+        </div>
         <div class="password">
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="password" placeholder="Password" required>
@@ -35,7 +39,7 @@
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         </div>
-        <button type="submit">Register</button>
+        <button class="btn" type="submit">Register</button>
         <div class="login_link">
             Already have an account? <a href="login.php">Login</a>
        </div>
