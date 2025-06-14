@@ -2,7 +2,8 @@ body{
     font-family: Arial, sans-serif;
     background-color: aqua;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Login Register Form */
@@ -64,4 +65,16 @@ body{
 }
 .login_link a:hover{
     text-decoration: underline;
+}
+
+/* Dashboard */
+.main_dashboard{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+.main_dashboard .sub_dashboard_a{
+    width: 20%;
+    background-color: #007bff;
 }
