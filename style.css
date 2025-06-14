@@ -16,8 +16,8 @@ body{
     text-align: center;
 }
 .register_login_form  h2{
-    color: #333;
-    font-size: 30px;
+    color: #000;
+    font-size: 40px;
     font-family: "PT Serif";
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
