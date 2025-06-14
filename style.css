@@ -75,6 +75,10 @@ body{
     margin: 0;
 }
 .main_dashboard .sub_dashboard_a{
-    width: 20%;
-    background-color: #007bff;
+    width: 15%;
+    background-color: #445BF4;
+    padding: 20px;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }

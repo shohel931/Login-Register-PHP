@@ -24,10 +24,10 @@
         <h2><i class="fas fa-user"></i> Username</h2>
       </div>
       <ul>
-        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a href="#"><span><i class="fas fa-home"></i></span> Home</a></li>
+        <li><a href="#"><span><i class="fas fa-user"></i></span> Profile</a></li>
+        <li><a href="#"><span><i class="fas fa-cog"></i></span> Settings</a></li>
+        <li><a href="#"><span><i class="fas fa-sign-out-alt"></i></span> Logout</a></li>
       </ul>
     </div>
   </div>
