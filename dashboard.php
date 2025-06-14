@@ -37,8 +37,7 @@
     <div class="dashboard_header">
       <h1>Dashboard</h1>
       <div class="user_info">
-        <img src="https://via.placeholder.com/50" alt="User Avatar">
-        <span>Welcome, User!</span>
+        <span> Welcome, User!</span>
       </div>
     </div>
     <div class="dashboard_content">
