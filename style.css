@@ -4,6 +4,8 @@ body{
     margin: 0;
     padding: 20px;
 }
+
+/* Register Form */
 .register_form{
     max-width: 400px;
     margin: auto;
@@ -36,4 +38,30 @@ body{
 .register_form i {
     font-size: 20px;
     margin: 0 10px;
+}
+.btn{
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color: #218838;
+}
+.login_link{
+    display: block;
+    margin-top: 20px;
+    color: #000;
+    text-decoration: none;
+}
+.login_link a{
+    color: #007bff;
+    text-decoration: none;
+}
+.login_link a:hover{
+    text-decoration: underline;
 }
