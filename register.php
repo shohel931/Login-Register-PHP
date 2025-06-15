@@ -1,10 +1,28 @@
 <?php 
+include 'config.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username   = $_POST['username'];
+    $email      = $_POST['email'];
+    $number     = $_POST['number'];
+    $password   = $_POST['password'];
+    $cpassword  = $_POST['cpassword'];
 
+    if ($password !== $cpassword) {
+        echo "Password & Confirm Password mismatched!";
+    } else {
+        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
+        $stmt = $conn->prepare("INSERT INTO users (username, email, number, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $username, $email, $number, $hashed_pass);
 
-
-
+        if ($stmt->execute()) {
+            echo "Registration successful. <a href='login.php'>Login here</a>";
+        } else {
+            echo "Something went wrong: " . $stmt->error;
+        }
+    }
+}
 
 
 ?>
