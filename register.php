@@ -1,19 +1,4 @@
 <?php 
-include 'config.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $number = $_POST['number'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    if ($password === $cpassword) {
-        $sql = "INSERT INTO users (username, email, number, password, cpassword) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $username, $email, $number, $password, $hashed_password, $cpassword);
-    }
-}
-
 
 
 
@@ -49,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <i class="fa-solid fa-envelope"></i>
             <input type="email" name="email" placeholder="Email" required>
         </div>
-        <div class="number">
+        <div class="numbers">
             <i class="fa-solid fa-phone"></i>
             <input type="tel" name="phone" placeholder="Phone Number" required>
         </div>
@@ -59,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>
         <div class="confirm_password">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="password" name="password" placeholder="Confirm Password" required>
         </div>
         <button class="btn" type="submit">Register</button>
         <div class="login_link">
