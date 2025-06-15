@@ -2,8 +2,8 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'my_work';
-$conn = new mysqli($host, $user, $pass, $db);
+$db = 'my_users';
+$conn = new  mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
