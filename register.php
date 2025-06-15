@@ -1,20 +1,36 @@
 <?php 
 include 'config.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $email    = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    
-    $sql = "INSERT INTO users (username, email, password)
-            VALUES ('$username', '$email', '$password')";
-    
-    if ($conn->query($sql)) {
-        echo "<p class='title_tage'> <span> Registration successful.</span> <a href='login.php'>Login</a></p>";
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if ($password === $password) {
+        echo "Passwords do not match!";
     } else {
-        echo "Error: " . $conn->error;
+        $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Registration successful!";
+            header("Location: login.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 }
-
+session_start();
+if (isset($_SESSION['user'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+if (isset($_GET['error'])) {
+    echo "<script>alert('".$_GET['error']."');</script>";
+}
+if (isset($_GET['success'])) {
+    echo "<script>alert('".$_GET['success']."');</script>";
+}
 
 ?>
 
@@ -42,10 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="email">
             <i class="fa-solid fa-envelope"></i>
             <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="numbers">
-            <i class="fa-solid fa-phone"></i>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
         </div>
         <div class="password">
             <i class="fa-solid fa-lock"></i>

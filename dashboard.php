@@ -1,9 +1,11 @@
-<?php 
-
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +39,7 @@
     <div class="dashboard_header">
       <h1>Dashboard</h1>
       <div class="user_info">
-        <span> Welcome, <i class="fa-solid fa-circle-user"></i>User!</span>
+        <span> Welcome, <i class="fa-solid fa-circle-user"></i><?php echo $_SESSION['user'] ?></span>
       </div>
     </div>
     <div class="dashboard_content">
