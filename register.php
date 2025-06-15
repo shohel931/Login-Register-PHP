@@ -1,4 +1,25 @@
 <?php 
+include 'config.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $number = $_POST['number'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    if ($password === $cpassword) {
+        $sql = "INSERT INTO users (username, email, number, password, cpassword) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssss", $username, $email, $number, $password, $hashed_password, $cpassword);
+    }
+}
+
+
+
+
+
+
+
 
 
 ?>
