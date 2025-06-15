@@ -9,5 +9,9 @@
 </head>
 <body>
     
+<div class="home_page">
+    
+</div>
+
 </body>
 </html>
