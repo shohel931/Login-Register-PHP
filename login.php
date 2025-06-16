@@ -1,4 +1,41 @@
 <?php 
+include 'config.php';
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+
+    $sql = "SELECT * FROM users WHERE username='$username'";
+
+    $result = mysqli_query($conn, $sql);
+
+    $result = mysqli_fetch_assoc($result);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        if ($row) {
+            if (password_verify($_POST['password'], $row['password'])) {
+                session_start();
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['id'] = $row['id'];
+                header("Location: dashboard.php");
+                exit();
+            }
+            else {
+                echo "<p class='wrong_pass'>Incorrect Password!</p>";
+            }
+       }
+    } 
+    else {
+        echo "<p class='wrong_pass'>Username not found!</p>";
+    }
+
+
+}
+
+mysqli_close($conn);
+
+
+
 
 ?>
 
