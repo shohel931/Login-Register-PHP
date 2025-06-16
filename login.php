@@ -1,38 +1,33 @@
 <?php 
 include 'config.php';
+
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-    $sql = "SELECT * FROM users WHERE username='$username'";
-
-    $result = mysqli_query($conn, $sql);
-
-    $result = mysqli_fetch_assoc($result);
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            if (password_verify($_POST['password'], $row['password'])) {
-                session_start();
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['id'] = $row['id'];
-                header("Location: dashboard.php");
-                exit();
-            }
-            else {
-                echo "<p class='wrong_pass'>Incorrect Password!</p>";
-            }
-       }
-    } 
-    else {
+    if ($row = mysqli_fetch_assoc($result)) {
+        if (password_verify($password, $row['password'])) {
+            session_start();
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['id'] = $row['id'];
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            echo "<p class='wrong_pass'>Incorrect Password!</p>";
+        }
+    } else {
         echo "<p class='wrong_pass'>Username not found!</p>";
     }
-
-
 }
 
 mysqli_close($conn);
+
 
 
 
@@ -65,7 +60,7 @@ mysqli_close($conn);
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="password" placeholder="Password" required>
         </div>
-        <button class="btn" type="submit">Login</button>
+        <button class="btn" type="submit" name="submit">Login</button>
         <div class="login_link">
             Don't have an account? <a href="register.php">Register</a>
        </div>

@@ -149,7 +149,9 @@ p.title_tage {
     font-size: 17px;
     background: #70a1ff;
     padding: 20px 0;
-    color: #000;
+    color: #fff;
+    width: 29%;
+    margin: 0 auto;
 }
 p.title_tage a {
     color: #fff;
@@ -166,4 +168,6 @@ p.wrong_pass {
     padding: 20px 0;
     background: red;
     color: #fff;
+    width: 29%;
+    margin: 0 auto;
 }

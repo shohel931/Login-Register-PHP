@@ -2,20 +2,41 @@
 include 'config.php';
 
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $username = trim($_POST['username']);
+    $email    = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-
-    if (mysqli_query($conn, $sql)){
-        echo "<p class='title_tage'>Registration Successful!</p> ";
+    // ✅ Username check
+    $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+    
+    if ($stmt->num_rows > 0) {
+        echo "<p class='title_tage'>Username already exists!</p>";
     } else {
-        echo "Error: " . mysqli_error($conn);
+        // ✅ Email check
+        $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows > 0) {
+            echo "<p class='title_tage'>Email already exists!</p>";
+        } else {
+            // ✅ All clear: Insert user
+            $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $username, $email, $password);
+            if ($stmt->execute()) {
+                echo "<p class='title_tage'>Registration Successful!</p>";
+            } else {
+                echo "<p class='title_tage'>Error: " . $stmt->error . "</p>";
+            }
+        }
     }
 }
 ?>
+
 
 
 

@@ -1,7 +1,12 @@
 <?php
+session_start();
 
-
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +41,7 @@
     <div class="dashboard_header">
       <h1>Dashboard</h1>
       <div class="user_info">
-        <span> Welcome, <i class="fa-solid fa-circle-user"></i><?php echo $_SESSION['user'] ?></span>
+        <span> Welcome, <i class="fa-solid fa-circle-user"></i><?php echo $_SESSION['username']; ?></span>
       </div>
     </div>
     <div class="dashboard_content">
