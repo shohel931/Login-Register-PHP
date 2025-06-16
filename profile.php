@@ -25,14 +25,15 @@ $user = mysqli_fetch_assoc($result);
 <body>
 
 <div class="profile_container">
-    <h2>👤 Profile Info</h2>
+    <h2>👤 Profile</h2>
+    <div class="sub_profile">
     <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
     <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
     <p><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($user['created_at'] ?? 'now')); ?></p>
-
+</div>
     <div class="actions">
         <a href="edit_profile.php">✏️ Edit Profile</a> |
-        <a href="change_password.php">🔒 Change Password</a> |
+        <a href="change_password.php">🔒 Change Password</a> | <br>
         <a href="dashboard.php">🏠 Back to Dashboard</a>
     </div>
 </div>
