@@ -10,14 +10,10 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if (mysqli_query($conn, $sql)){
-        echo "<script>alert('Registration Successful!'); window.location.href='login.php'; </script>";
-        exit;
+        echo "<p class='title_tage'>Registration Successful!</p> ";
     } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        echo "Error: " . mysqli_error($conn);
     }
-
-    
-  
 }
 ?>
 
