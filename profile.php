@@ -32,8 +32,8 @@ $user = mysqli_fetch_assoc($result);
     <p><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($user['created_at'] ?? 'now')); ?></p>
 </div>
     <div class="actions">
-        <a href="edit_profile.php">✏️ Edit Profile</a> |
-        <a href="change_password.php">🔒 Change Password</a> | <br>
+        <a href="edit_profile.php">✏️ Edit Profile</a> 
+        <a href="change_password.php">🔒 Change Password</a> <br>
         <a href="dashboard.php">🏠 Back to Dashboard</a>
     </div>
 </div>

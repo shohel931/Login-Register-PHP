@@ -199,3 +199,19 @@ p.wrong_pass {
 .sub_profile p strong {
    color: #000;
 }
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+.actions a {
+    display: inline-block;
+    margin:  10px;
+    padding: 10px 20px;
+    background-color: #3842cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.actions a:hover {
+    background-color: #218838;
+}
