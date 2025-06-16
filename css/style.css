@@ -215,3 +215,19 @@ p.wrong_pass {
 .actions a:hover {
     background-color: #218838;
 }
+.setting_links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.setting_links a {
+    display: flex;
+    flex-direction: row;
+    margin: 20px ;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+}
