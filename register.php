@@ -9,39 +9,15 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
-    // if (mysqli_query($conn, $sql)){
-    //     echo "<script>alert('Registration Successful!'); window.location.href='login.php'; </script>";
-    //     exit;
-    // } else {
-    //     echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
-    // }
+    if (mysqli_query($conn, $sql)){
+        echo "<script>alert('Registration Successful!'); window.location.href='login.php'; </script>";
+        exit;
+    } else {
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+    }
 
     
-    // Check if usename already exists
-    $check_username_sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $check_username_sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        echo "<script>alert('Username already exists! Please try with a different one.');</script>";
-    } else {
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-
-        if (mysqli_query($conn, $sql)){
-            echo "<script>alert('Registration Successful!'); window.location.href='login.php';</script>";
-            exit;
-        } else {
-            echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
-        }
-    }
-     // Check if email already exists
-    $check_email_sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $check_email_sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        echo "<script>alert('Email already exists! Please try with a different one.');</script>";
-    } else {
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-    }
+  
 }
 ?>
 

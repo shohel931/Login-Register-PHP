@@ -33,5 +33,7 @@
     </div>
 </div>
 
+<a href="login.php">Login Here</a> or <a href="register.php">Register </a>
+
 </body>
 </html>
