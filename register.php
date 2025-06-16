@@ -7,11 +7,11 @@ if (isset($_POST['submit'])) {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
-    $sql = "INSERT TNTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if (mysqli_query($conn, $sql)){
-        echo "<script>alert('Registration Successful!');</script>";
-        header("Location: login.php");
+        echo "<script>alert('Registration Successful!'); window.location.href='login.php'; </script>";
+        exit;
     } else {
         echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
     }
