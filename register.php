@@ -1,5 +1,11 @@
 <?php 
+include 'config.php';
 
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+}
 
 ?>
 
@@ -36,7 +42,7 @@
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="password" placeholder="Confirm Password" required>
         </div>
-        <button class="btn" type="submit">Register</button>
+        <button class="btn" type="submit" name="submit">Register</button>
         <div class="login_link">
             Already have an account? <a href="login.php">Login</a>
        </div>
