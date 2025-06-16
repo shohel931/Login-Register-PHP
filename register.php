@@ -9,7 +9,12 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT TNTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
-    
+    if (mysqli_query($conn, $sql)){
+        echo "<script>alert('Registration Successful!');</script>";
+        header("Location: login.php");
+    } else {
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+    }
 
 
 
@@ -45,10 +50,6 @@ if (isset($_POST['submit'])) {
         <div class="password">
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="password" placeholder="Password" required>
-        </div>
-        <div class="confirm_password">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" name="password" placeholder="Confirm Password" required>
         </div>
         <button class="btn" type="submit" name="submit">Register</button>
         <div class="login_link">
